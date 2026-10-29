@@ -1,0 +1,17 @@
+Día 1:
+Registro de pruebas:
+Al ejecutar /promociones.html la respuesta es un error 404(Not found)
+HTML: Se encarga de dar estructura general a la información y administrar
+la gerarquía dentro de la página. Ej: Título <h1>
+CSS: Permitirá modificar la representación estética del contenido y agregar detalles
+de diseño. Ej: Modificar el tipo de letra de la página con fount-family
+JS: Ayuda a generar conexiones funcionales a la página y gestioonar las interacciones 
+con el usuario. Ej: console.log("Generando ingreso!")
+
+URL: http://127.0.0.1:5500/promociones.html
+Protocolo:http
+Host:127.0.0.1
+Puerto:5500
+Ruta:/promociones.html
+Método de la petición:GET
+Código del estado: 404 Not Found
