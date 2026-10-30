@@ -15,3 +15,14 @@ Puerto:5500
 Ruta:/promociones.html
 Método de la petición:GET
 Código del estado: 404 Not Found
+
+Rutas del menú:
+
+Origen: index.html
+Destinos: paginas/reservas.html y paginas/tarifas.html
+
+Origen: reservas.html
+Destinos: tarifas.html y ../index.html
+
+Origen: tarifas.html
+Destinos: reservas.html y ../index.html
