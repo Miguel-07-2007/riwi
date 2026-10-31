@@ -27,7 +27,73 @@
             <dd>6:00 a.m. - 2:00 p.m.</dd>
         </dl>
         </section>
-        
+
+        <section>
+           <h2>Formulario de Reserva</h2>
+           <form action="" method="post">
+            <fieldset>
+                <legend>Tus Datos</legend>
+
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" name="nombre" id="nombre"> 
+
+                <label for="documento">Numero de Documento</label>
+                <input type="number" name="documento" id="documento">
+
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" name="correo" id="correo">
+
+                <label for="celular">Celular</label>
+                <input type="tel" name="celular" id="celular">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Tu Alquiler</legend>
+
+                <label for="fecha">Fecha de alquiler</label>
+                <input type="date" name="fecha" id="fecha">
+
+                <label for="tipo_bicicleta">Tipo de bicicleta</label>
+                <select name="tipo_bicicleta" id="tipo_bicicleta">
+                    <option value="urbana">Urbana</option>
+                    <option value="montaña">Montaña</option>
+                    <option value="eléctrica">Eléctrica</option>
+                </select>
+
+                <label for="tipo_plan">Tipo de plan</label>
+                <select name="tipo_plan" id="tipo_plan">
+                    <option value="una_hora">Una hora</option>
+                    <option value="medio_dia">Medio día</option>
+                    <option value="dia_completo">Día completo</option>
+                </select>
+
+                <label for="cantidad_bicicletas">Cantidad de bicicletas</label>
+                <input 
+                type="number" name="cantidad_bicicletas" id="cantidad_bicicletas" 
+                min="1" max="10" step="1" value="1">
+                
+                <label for="recorrido_guiado">Recorrido guiado</label>
+                <select name="recorrido_guiado" id="recorrido_guiado">
+                    <option value="rio_parques">Río y Parques</option>
+                    <option value="sabores_barrio">Sabores de Barrio</option>
+                    <option value="reto_palmas">Reto las palmas</option>
+                    <option value="ninguno">Ninguno</option>
+                </select>
+
+                <label for="comentarios">Comentarios</label>
+                <input type="textarea" name="comentarios" id="comentarios">
+            </fieldset>
+
+            <fieldset>
+                <legend>Confirmación</legend>
+
+                <label for="confirmacion">Confirmación de las políticas de alquiler</label>
+                <button type="submit" name="confirmacion" id="confirmacion">Acepto</button>
+            </fieldset>
+
+           </form>
+        </section>
+
         <a href="mailto:hola@ruedalibre.example">Correo de contacto</a>
         
     </main>
