@@ -35,33 +35,33 @@
                 <legend>Tus Datos</legend>
 
                 <label for="nombre">Nombre Completo</label>
-                <input type="text" name="nombre" id="nombre"> 
+                <input type="text" name="nombre" id="nombre" required minlength="3" title="Ingresa tu nombre completo (mínimo 3 caracteres).">
 
                 <label for="documento">Numero de Documento</label>
-                <input type="number" name="documento" id="documento">
+                <input type="number" name="documento" id="documento" required minlength="6" maxlength="10" title="Ingresa tu número de documento.">
 
                 <label for="correo">Correo Electrónico</label>
-                <input type="email" name="correo" id="correo">
+                <input type="email" name="correo" id="correo" required title="Ingresa una dirección de correo electrónico válida.">
 
                 <label for="celular">Celular</label>
-                <input type="tel" name="celular" id="celular">
+                <input type="tel" name="celular" id="celular" required pattern="3[0-9]" title="Ingresa tu número de celular.">
             </fieldset>
             
             <fieldset>
                 <legend>Tu Alquiler</legend>
 
                 <label for="fecha">Fecha de alquiler</label>
-                <input type="date" name="fecha" id="fecha">
+                <input type="date" name="fecha" id="fecha" required min="2026-11-01" max="2026-12-31" title="Selecciona la fecha de alquiler, entre el 1 de noviembre y el 31 de diciembre de 2026.">
 
                 <label for="tipo_bicicleta">Tipo de bicicleta</label>
-                <select name="tipo_bicicleta" id="tipo_bicicleta">
+                <select name="tipo_bicicleta" id="tipo_bicicleta" required title="Selecciona el tipo de bicicleta que deseas alquilar.">
                     <option value="urbana">Urbana</option>
                     <option value="montaña">Montaña</option>
                     <option value="eléctrica">Eléctrica</option>
                 </select>
 
                 <label for="tipo_plan">Tipo de plan</label>
-                <select name="tipo_plan" id="tipo_plan">
+                <select name="tipo_plan" id="tipo_plan" required>
                     <option value="una_hora">Una hora</option>
                     <option value="medio_dia">Medio día</option>
                     <option value="dia_completo">Día completo</option>
@@ -70,10 +70,11 @@
                 <label for="cantidad_bicicletas">Cantidad de bicicletas</label>
                 <input 
                 type="number" name="cantidad_bicicletas" id="cantidad_bicicletas" 
-                min="1" max="10" step="1" value="1">
+                min="1" max="6" step="1" value="1"
+                title="Indica cuántas bicicletas necesitas (de 1 a 6).">
                 
                 <label for="recorrido_guiado">Recorrido guiado</label>
-                <select name="recorrido_guiado" id="recorrido_guiado">
+                <select name="recorrido_guiado" id="recorrido_guiado" title="Selecciona un recorrido guiado si deseas participar en uno.">
                     <option value="rio_parques">Río y Parques</option>
                     <option value="sabores_barrio">Sabores de Barrio</option>
                     <option value="reto_palmas">Reto las palmas</option>
@@ -81,14 +82,16 @@
                 </select>
 
                 <label for="comentarios">Comentarios</label>
-                <input type="textarea" name="comentarios" id="comentarios">
+                <input type="textarea" name="comentarios" id="comentarios" maxlength="300" title="Escribe cualquier comentario adicional (máximo 300 caracteres).">
             </fieldset>
 
             <fieldset>
                 <legend>Confirmación</legend>
 
                 <label for="confirmacion">Confirmación de las políticas de alquiler</label>
-                <button type="submit" name="confirmacion" id="confirmacion">Acepto</button>
+                <button type="checkbox" name="confirmacion" id="confirmacion" required>Acepto</button>
+
+                <button type="submit">Enviar formulario</button>
             </fieldset>
 
            </form>
