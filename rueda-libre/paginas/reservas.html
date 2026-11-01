@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -12,8 +12,12 @@
         <h1>Reserva tu bicicleta</h1>
          <nav>
             <ul>
-                <a href="tarifas.html">Tarifas y Rutas</a>
-                <a href="../index.html">Inicio</a>
+                <li>
+                    <a href="tarifas.html">Tarifas y Rutas</a>
+                </li>
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,7 +34,7 @@
 
         <section>
            <h2>Formulario de Reserva</h2>
-           <form action="" method="post">
+           <form action="#" method="post">
             <fieldset>
                 <legend>Tus Datos</legend>
 
@@ -82,14 +86,16 @@
                 </select>
 
                 <label for="comentarios">Comentarios</label>
-                <input type="textarea" name="comentarios" id="comentarios" maxlength="300" title="Escribe cualquier comentario adicional (máximo 300 caracteres).">
+                <textarea name="comentarios" id="comentarios" maxlength="300">
+                    Escribe cualquier comentario adicional (máximo 300 caracteres).
+                </textarea>
             </fieldset>
 
             <fieldset>
                 <legend>Confirmación</legend>
 
                 <label for="confirmacion">Confirmación de las políticas de alquiler</label>
-                <button type="checkbox" name="confirmacion" id="confirmacion" required>Acepto</button>
+                <input type="checkbox" name="confirmacion" id="confirmacion" required>
 
                 <button type="submit">Enviar formulario</button>
             </fieldset>
@@ -97,7 +103,7 @@
            </form>
         </section>
 
-        <a href="mailto:hola@ruedalibre.example">Correo de contacto</a>
+        <a href="mailto:hola@ruedalibre.example">Enviar correo a Rueda Libre</a>
         
     </main>
     <footer>

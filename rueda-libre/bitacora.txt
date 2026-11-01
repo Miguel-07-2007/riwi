@@ -26,3 +26,34 @@ Destinos: tarifas.html y ../index.html
 
 Origen: tarifas.html
 Destinos: reservas.html y ../index.html
+
+Día 2:
+Hallazgos corregidos:
+
+- El languaje de las tres páginas se pasó de inglés
+ a español
+- La ul del menú de las 3 págs no tenía li, si no a sueltos
+ se agregaron los li para que quede más organizado
+- Textos de enlace poco descriptivos, se reemplazaron
+
+Clasificación de colores:
+
+      Combinación	            Contraste	   Clasificación
+Blanco sobre Verde Ruta	         5.31:1	   Apta para texto normal
+Blanco sobre Naranja Pedal	     2.22:1	   No apta
+Azul Noche sobre Naranja Pedal   7.20:1	   Apta para texto normal
+Azul Noche sobre Crema	        14.83:1	   Apta para texto normal
+Gris Asfalto sobre Crema	     5.57:1	   Apta para texto normal
+Verde Ruta sobre Crema	         4.93:1	   Apta para texto normal
+Naranja Pedal sobre Crema	     2.06:1	   No apta
+Blanco sobre Azul Noche	        15.97:1	   Apta para texto normal
+
+Mapa de uso de colores:
+
+Fondos: Crema.
+Texto principal y títulos: Azul Noche sobre Crema.
+Texto secundario: Gris Asfalto sobre Crema.
+Enlaces: Verde Ruta sobre Crema.
+Botón verde: Verde Ruta con texto blanco.
+Botón naranja: Naranja Pedal con texto Azul Noche.
+Evitar: texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema.
