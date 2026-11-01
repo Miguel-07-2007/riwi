@@ -77,3 +77,9 @@ revisando en cada una el apartado styles de cada objeto con devtools.
 
 Se evidencia las herencias existentes siguiendo el mismo procedimiento desde
 devtools -> styles.
+
+Solución de confilcto de estilos en el menú:
+
+La especificidad del selector con ID es "Specificity: (1,0,1)"
+mientras que la de la clase activo es "Specificity: (0,1,0)", esto hace
+que el link activo no se vea de color verde ruta

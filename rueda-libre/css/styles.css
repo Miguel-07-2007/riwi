@@ -4,6 +4,7 @@
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
+    --color-blanco: #FFFFFF;
 
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", Arial, sans-serif;
@@ -31,4 +32,66 @@ a{
 button{
     color: var(--color-azul-noche);
     background-color: var(--color-naranja-pedal);
+}
+
+#menu a {
+    display: inline-block;
+    padding: var(--espacio-pequeno);
+    color: var(--color-gris-asfalto);
+    background-color: var(--color-crema);
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+    margin: 3px;
+}
+
+#menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+#menu a:hover,
+#menu a:focus-visible,
+#menu a.activo:hover,
+#menu a.activo:focus-visible {
+    color: var(--color-azul-noche);
+    background-color: var(--color-naranja-pedal);
+    text-decoration: underline;
+}
+
+#menu a:focus-visible{
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
+}
+
+a.boton-cta{
+    display: inline-block;
+    padding: var(--espacio-pequeno) var(--espacio-grande);
+    color: var(--color-azul-noche);
+    background-color: var(--color-naranja-pedal);
+    border: 2px solid var(--color-azul-noche);
+    border-radius: 0.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a.boton-cta:hover{
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+}
+
+a.boton-cta:focus-visible{
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
+    }
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--color-verde-ruta);
+    outline-offset: 2px;
 }
