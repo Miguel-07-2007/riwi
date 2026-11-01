@@ -57,3 +57,23 @@ Enlaces: Verde Ruta sobre Crema.
 Botón verde: Verde Ruta con texto blanco.
 Botón naranja: Naranja Pedal con texto Azul Noche.
 Evitar: texto blanco sobre Naranja Pedal y texto Naranja Pedal sobre Crema.
+
+Día 3:
+
+Herencia de propiedades de css:
+
+- El color declarado para el body es heredado por el párrafo.
+- El backgrpund-color declarado para el body no es heredado automáticamente
+por el párrafo, este conserva su valor por defecto que es transparante.
+
+Verificaciones de fuentes, rutas y herencia:
+
+Las fuentes se verificaron seleccionando los diferentes tipos de textos en
+la página cargada, desde el devtools, revisando el apartado styles y ahí
+los valores asignados a las fuentes y sus fuentes auxiliares.
+
+Las rutas se verificaron gracias a la navegación entre las diferentes páginas
+revisando en cada una el apartado styles de cada objeto con devtools.
+
+Se evidencia las herencias existentes siguiendo el mismo procedimiento desde
+devtools -> styles.
