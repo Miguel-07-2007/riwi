@@ -1,4 +1,4 @@
-:root{
+:root {
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
@@ -9,29 +9,56 @@
     --fuente-titulos: "Montserrat", Arial, sans-serif;
     --fuente-texto: "Open Sans", Arial, sans-serif;
 
-    --espacio-pequeno: 1rem;
-    --espacio-mediano: 2rem;
-    --espacio-grande: 3rem;
+    --espacio-pequeno: 0.5rem;
+    --espacio-mediano: 1rem;
+    --espacio-grande: 2rem;
 }
 
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
     font-family: var(--fuente-texto);
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
 }
 
-h1, h2, h3{
+h1, h2, h3 {
     font-family: var(--fuente-titulos);
 }
 
-a{
+a {
     color: var(--color-verde-ruta);
     background-color: var(--color-crema);
 }
 
-button{
+button {
     color: var(--color-azul-noche);
     background-color: var(--color-naranja-pedal);
+}
+
+.enlace-whatsapp {
+    position: fixed;
+    bottom: var(--espacio-mediano);
+    right: var(--espacio-mediano);
+}
+
+/* Navegación compartida */
+
+.nombre-del-negocio {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: var(--espacio-pequeno);
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: var(--espacio-mediano);
+    margin-top: var(--espacio-pequeno);
 }
 
 #menu a {
@@ -61,12 +88,13 @@ button{
     text-decoration: underline;
 }
 
-#menu a:focus-visible{
+#menu a:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
 }
 
-a.boton-cta{
+/* Llamadas a la acción compartidas */
+a.boton-cta {
     display: inline-block;
     padding: var(--espacio-pequeno) var(--espacio-grande);
     color: var(--color-azul-noche);
@@ -78,20 +106,120 @@ a.boton-cta{
     transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-a.boton-cta:hover{
+a.boton-cta:hover {
     color: var(--color-blanco);
     background-color: var(--color-verde-ruta);
 }
 
-a.boton-cta:focus-visible{
+a.boton-cta:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
-    }
+}
 
+/* Página de inicio */
+#portada {
+    min-height: 80vh;
+}
+
+.contenido {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+#contenedor-servicios {
+    list-style: none;
+    display: grid;
+    max-width: 60rem;
+    margin: 0 auto;
+    gap: var(--espacio-grande);
+}
+
+.servicio {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+    width: 100%;
+    max-width: 30rem;
+    border: 2px solid var(--color-azul-noche);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0;
+    position:relative;
+}
+
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-pequeno);
+    right: var(--espacio-pequeno);
+    margin: var(--espacio-pequeno);
+    padding: 0.25rem 0.75rem;
+    color: var(--color-azul-noche);
+    background-color: var(--color-naranja-pedal);
+    border-radius: 999px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.servicio .contenido {
+    padding: var(--espacio-pequeno);
+}
+
+.img-servicio {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* Página de tarifas */
+.tabla-tarifas {
+    border: 3px solid var(--color-azul-noche);
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+    margin: 2rem 0;
+    padding: var(--espacio-pequeno);
+}
+
+.tabla-tarifas caption {
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
+    border: 3px solid var(--color-azul-noche);
+    padding: var(--espacio-pequeno);
+}
+
+/* Página de reservas */
+#formulario label {
+    display: block;
+}
+
+#formulario input,
+#formulario textarea,
+#formulario select {
+    width: 100%;
+    margin-bottom: var(--espacio-pequeno);
+}
+
+#formulario fieldset {
+    margin-bottom: var(--espacio-mediano);
+}
+
+#formulario button[type="submit"] {
+    padding: var(--espacio-mediano) var(--espacio-grande);
+    margin: var(--espacio-pequeno);
+}
+
+#formulario input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--espacio-pequeno);
+}
+
+/* Foco visible de los controles del formulario */
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-button:focus-visible{
+button:focus-visible {
     outline: 2px solid var(--color-verde-ruta);
     outline-offset: 2px;
+}
+
+#formulario button:hover {
+    color: var(--color-blanco);
+    background-color: var(--color-verde-ruta);
 }

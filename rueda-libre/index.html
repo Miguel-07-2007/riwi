@@ -7,13 +7,15 @@
     <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
+        <p class="nombre-del-negocio">Rueda Libre</p>
         <nav>
             <ul id="menu">
                 <li>
@@ -28,39 +30,60 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <img src="img/fondo.jpeg" alt="Portada de ciclista" width="400px">
-        <p>
-            Rueda libre es tu aliado n1 para tu parche de biciceltas,
-            ven y descubre todo lo que tenemos para ti, desde bicicletas
-            de montaña, hasta bicicletas de ruta, tenemos todo lo que
-            necesitas para tu parche de amigos. <a href="#encuentranos">
-                Encuentranos</a> al final de la página.
-        </p>
+        <section id="portada">
+            <div class="contenido">
+
+                <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
+
+                <img src="img/fondo.jpeg" alt="Portada de ciclista" width="400px">
+                <p>
+                    Rueda libre es tu aliado n1 para tu parche de biciceltas,
+                    ven y descubre todo lo que tenemos para ti, desde bicicletas
+                    de montaña, hasta bicicletas de ruta, tenemos todo lo que
+                    necesitas para tu parche de amigos. <a href="#encuentranos">
+                        Encuentranos</a> al final de la página.
+                </p>
+            </div>
+        </section>
+
         <section>
             <h2>¿Quiénes somos?</h2>
+            <p>
+                En Rueda Libre compartimos la pasión por recorrer Medellín en bicicleta.
+                Ofrecemos alquiler de bicicletas, recorridos guiados y consejos para
+                que disfrutes cada paseo de forma cómoda y segura.
+            </p>
         </section>
         <section>
             <h2>Nuestros Servicios</h2>
-            <ul>
+            <ul id="contenedor-servicios">
                 <li>
-                    <article>
-                        <h3>Alquiler de bicicletas</h3>
-                        <img src="img/bicicleta.jpeg" alt="Bicicleta" width="400px">
-                        <p></p>
+                    <article class="servicio">
+                        <img src="img/bicicleta.jpeg" alt="Bicicleta" class="img-servicio">
+                        <div class="contenido">
+                            <h3>Alquiler de bicicletas</h3>
+                            <p>Elige una bicicleta urbana, de montaña o eléctrica y disfruta Medellín a tu propio ritmo.
+                            </p>
+                        </div>
+                        <p class="etiqueta-nuevo">Nuevo</p>
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article class="servicio">
+                        <img src="img/ruta.jpeg" alt="Ruta" class="img-servicio">
                         <h3>Recorridos guiados</h3>
-                    <img src="img/ruta.jpeg" alt="Ruta" width="400px">
-                    <p></p>
+                        <p>Explora rutas de la ciudad acompañado por guías y descubre sus parques, barrios y paisajes.
+                        </p>
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article class="servicio">
+                        <img src="img/taller.jpg" alt="Imagen alusiva al taller de Rueda-Libre" class="img-servicio">
                         <h3>Taller básico</h3>
-                    <p></p>
+                        <p>Aprende cuidados esenciales para tu bicicleta y consejos prácticos para pedalear con
+                            confianza.</p>
                     </article>
                 </li>
             </ul>
@@ -68,26 +91,28 @@
         <section>
             <h2>¿Cómo alquilar?</h2>
             <ol>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Explora nuestras bicicletas y elige la que mejor se adapte a tu recorrido.</li>
+                <li>Selecciona la fecha y el plan que prefieras.</li>
+                <li>Completa el formulario con tus datos y los detalles del alquiler.</li>
+                <li>Revisa tu información y envía la solicitud de reserva.</li>
             </ol>
             <h3>Beneficios de alquilar</h3>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Recorre la ciudad a tu propio ritmo y descubre nuevos lugares.</li>
+                <li>Elige entre bicicletas urbanas, de montaña o eléctricas.</li>
+                <li>Disfruta tu paseo con casco y candado incluidos en el alquiler.</li>
             </ul>
 
             <a href="paginas/reservas.html" class="boton-cta">Reservar ahora</a>
         </section>
         <section id="encuentranos">
             <h2>Encuentranos</h2>
-            <a href="https://maps.app.goo.gl/fQB62hSShDkfsh3U9" target="_blank">Ubicación de Rueda Libre en google maps</a>
+            <a href="https://maps.app.goo.gl/fQB62hSShDkfsh3U9" target="_blank">Ubicación de Rueda Libre en google
+                maps</a>
             <a href="mailto:hola@ruedalibre.example" target="_blank">Enviar correo a Rueda Libre</a>
 
         </section>
+        <a href="https://wa.me/573000000000" target="_blank" class="enlace-whatsapp">Escríbenos por WhatsApp</a>
     </main>
     <footer>
         <p>
