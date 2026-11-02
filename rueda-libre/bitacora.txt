@@ -83,3 +83,16 @@ Solución de confilcto de estilos en el menú:
 La especificidad del selector con ID es "Specificity: (1,0,1)"
 mientras que la de la clase activo es "Specificity: (0,1,0)", esto hace
 que el link activo no se vea de color verde ruta
+
+Enlace de WhatsApp y foco con teclado:
+
+- Se agregó el enlace visible "Escríbenos por WhatsApp" en las tres páginas,
+  apuntando a https://wa.me/573000000000 y abriéndose en otra pestaña.
+- Se fijó el enlace en la esquina inferior derecha con position: fixed,
+  usando bottom y right para ubicarlo mientras se desplaza la página.
+- Al revisar el foco del enlace, la declaración outline solo tenía el color,
+  por lo que no definía un contorno visible completo.
+- Se corrigió el indicador con un contorno sólido de 3 px en Azul Noche y
+  separación de 2 px mediante outline-offset.
+- Verificación con teclado: recorrer con Tab y confirmar que el enlace de
+  WhatsApp recibe foco y muestra el contorno visible.

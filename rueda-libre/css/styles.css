@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
@@ -13,6 +15,8 @@
     --espacio-mediano: 1rem;
     --espacio-grande: 2rem;
 }
+
+/* Base y elementos generales */
 
 * {
     box-sizing: border-box;
@@ -38,13 +42,7 @@ button {
     background-color: var(--color-naranja-pedal);
 }
 
-.enlace-whatsapp {
-    position: fixed;
-    bottom: var(--espacio-mediano);
-    right: var(--espacio-mediano);
-}
-
-/* Navegación compartida */
+/* Navegación compartida y Encabezado */
 
 .nombre-del-negocio {
     text-align: center;
@@ -93,7 +91,7 @@ button {
     outline-offset: 3px;
 }
 
-/* Llamadas a la acción compartidas */
+/* Componentes compartidos como CTA y WhatsApp */
 a.boton-cta {
     display: inline-block;
     padding: var(--espacio-pequeno) var(--espacio-grande);
@@ -116,7 +114,19 @@ a.boton-cta:focus-visible {
     outline-offset: 3px;
 }
 
-/* Página de inicio */
+.enlace-whatsapp {
+    position: fixed;
+    bottom: var(--espacio-mediano);
+    right: var(--espacio-mediano);
+}
+
+/* al tabular no está pasando por este botón */
+.enlace-whatsapp:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 2px;
+}
+
+/* Página de inicio y tarjetas(servicios) */
 #portada {
     min-height: 80vh;
 }
@@ -184,7 +194,7 @@ a.boton-cta:focus-visible {
     padding: var(--espacio-pequeno);
 }
 
-/* Página de reservas */
+/* Página de reservas / Formulario */
 #formulario label {
     display: block;
 }
