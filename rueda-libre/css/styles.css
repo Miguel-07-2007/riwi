@@ -42,32 +42,38 @@ button {
     background-color: var(--color-naranja-pedal);
 }
 
-/* Navegación compartida y Encabezado */
+/* Navegación compartida, Encabezado y Footer*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--espacio-mediano);
+}
 
 .nombre-del-negocio {
-    text-align: center;
     font-size: large;
     font-weight: bold;
-    margin-bottom: var(--espacio-pequeno);
 }
 
 #menu {
     display: flex;
-    justify-content: center;
     list-style: none;
-    gap: var(--espacio-mediano);
-    margin-top: var(--espacio-pequeno);
+    gap: var(--espacio-pequeno);
+    margin: 0;
+    padding: 0;
 }
 
 #menu a {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     padding: var(--espacio-pequeno);
     color: var(--color-gris-asfalto);
     background-color: var(--color-crema);
     border-radius: 0.25rem;
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease;
-    margin: 3px;
 }
 
 #menu a.activo {
@@ -89,6 +95,13 @@ button {
 #menu a:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
+}
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* Componentes compartidos como CTA y WhatsApp */
