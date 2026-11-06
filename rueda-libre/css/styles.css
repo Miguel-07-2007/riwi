@@ -139,7 +139,7 @@ a.boton-cta:focus-visible {
     outline-offset: 2px;
 }
 
-/* Página de inicio y tarjetas(servicios) */
+/* Página de inicio, tarjetas(flotas) y tarjetas(servicios) */
 #portada {
     min-height: 80vh;
 }
@@ -147,6 +147,47 @@ a.boton-cta:focus-visible {
 .contenido {
     max-width: 60rem;
     margin: 0 auto;
+}
+
+.flota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.modelo-flota {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--color-naranja-pedal);
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.modelo-contenido {
+    display: flex;
+    flex-direction: column;
+    padding: var(--espacio-mediano);
+    justify-content: flex-grow;
+    gap: var(--espacio-pequeno);
+}
+
+.modelo-flota img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.modelo-flota a {
+    display: inline-block;
+    padding: 6px;
+    text-decoration: none;
+    border-radius: var(--espacio-pequeno);
+}
+
+.modelo-flota a:hover {
+    transform: translateY(2px);
 }
 
 #contenedor-servicios {
