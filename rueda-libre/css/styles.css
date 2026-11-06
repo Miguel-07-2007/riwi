@@ -152,8 +152,7 @@ a.boton-cta:focus-visible {
 .flota {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    gap: 1rem;
 }
 
 .modelo-flota {
@@ -169,8 +168,9 @@ a.boton-cta:focus-visible {
     display: flex;
     flex-direction: column;
     padding: var(--espacio-mediano);
-    justify-content: flex-grow;
+    justify-content: space-between;
     gap: var(--espacio-pequeno);
+    height: 100%;
 }
 
 .modelo-flota img {

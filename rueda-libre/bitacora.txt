@@ -105,4 +105,9 @@ Header y Footer con flexbox aplicado.
 Obserevaciones: Al reducir el espacio los elementos se acercan entre sí,
 al quedar sin espacio se reparten añadiendo una nueva línea, esto gracias
 a la propiedad wrap de flex-wrap(flex-wrap: wrap).
+
+Pruebas con variaciones de tamaño: 
+1280 px: Se ven 5 tarjetas de modelos por fila.
+900 px: Se ven 4 tarjetas de modelos por fila.
+500 px: Se ven 2 tarjetas de modelos por fila.
   
