@@ -30,7 +30,9 @@ body {
     background-color: var(--color-crema);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--fuente-titulos);
     line-height: 1.2;
 }
@@ -56,16 +58,14 @@ button {
 header {
     width: min(100%, 80rem);
     margin-inline: auto;
-    padding: var(--espacio-mediano) clamp(1rem, 4vw, 3rem);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: var(--espacio-mediano);
 }
 
 .nombre-del-negocio {
-    font-size: large;
+    margin: 21.44px 0px;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -115,9 +115,10 @@ footer {
     margin-inline: auto;
     padding: var(--espacio-mediano) clamp(1rem, 4vw, 3rem);
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     gap: var(--espacio-mediano);
 }
 
@@ -163,7 +164,7 @@ main {
     padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
-main > section {
+main>section {
     padding-block: clamp(1rem, 3vw, 2.5rem);
 }
 
@@ -177,13 +178,14 @@ main > section {
 
 #portada .contenido {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: minmax(min(100%, 18rem), 1fr);
     gap: var(--espacio-grande);
     justify-content: center;
     align-items: center;
 }
 
 #portada .contenido #text {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,7 +209,7 @@ main > section {
 
 .flota {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    grid-template-columns: minmax(min(100%, 14rem), 1fr);
     gap: var(--espacio-mediano);
 }
 
@@ -221,6 +223,7 @@ main > section {
     border-radius: 20px;
     overflow: hidden;
 }
+
 .modelo-contenido {
     display: flex;
     flex-direction: column;
@@ -250,14 +253,14 @@ main > section {
 #contenedor-rutas {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    grid-template-columns: minmax(min(100%, 16rem), 1fr);
     max-width: 60rem;
     margin: 0 auto;
     padding: 0;
     gap: var(--espacio-grande);
 }
 
-#contenedor-rutas > li {
+#contenedor-rutas>li {
     min-width: 0;
 }
 
@@ -305,14 +308,14 @@ main > section {
 #contenedor-servicios {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    grid-template-columns: minmax(min(100%, 18rem), 1fr);
     max-width: 60rem;
     margin: 0 auto;
     padding: 0;
     gap: var(--espacio-grande);
 }
 
-#contenedor-servicios > li {
+#contenedor-servicios>li {
     min-width: 0;
 }
 
@@ -367,7 +370,7 @@ main > section {
 
 .tabla-tarifas th,
 .tabla-tarifas td {
-    padding: var(--espacio-pequeno);
+    padding: var(0.25rem);
     overflow-wrap: anywhere;
 }
 
@@ -381,16 +384,9 @@ main > section {
 /* Página de reservas / Formulario */
 
 .contenido-reservas {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(min(100%, 18rem), 1fr);
     gap: var(--espacio-grande);
-}
-
-#informacion-de-contacto {
-    flex: 1;
-}
-
-#formulario {
-    flex: 2;
 }
 
 #formulario label {
@@ -456,4 +452,93 @@ button:focus-visible {
 #formulario button:hover {
     color: var(--color-blanco);
     background-color: var(--color-verde-ruta);
+}
+
+@media (min-width: 768px) {
+
+    header {
+        width: min(100%, 80rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #portada .contenido {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    #contenedor-rutas {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    }
+
+    .flota {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    }
+
+    #contenedor-servicios {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    .contenido-reservas {
+        display: flex;
+    }
+
+    #informacion-de-contacto {
+        flex: 1;
+    }
+
+    #formulario {
+        flex: 2;
+    }
+
+        .tabla-tarifas th,
+    .tabla-tarifas td {
+        padding: var(--espacio-pequeno);
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+@media (min-width: 1280px) {
+    #portada .contenido {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    #contenedor-rutas {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    }
+
+    .flota {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    }
+
+    #contenedor-servicios {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    }
+
+    .contenido-reservas {
+        display: flex;
+    }
+
+    #informacion-de-contacto {
+        flex: 1;
+    }
+
+    #formulario {
+        flex: 2;
+    }
+
+    footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 }

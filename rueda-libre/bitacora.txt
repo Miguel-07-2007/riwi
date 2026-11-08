@@ -110,4 +110,19 @@ Pruebas con variaciones de tamaño:
 1280 px: Se ven 5 tarjetas de modelos por fila.
 900 px: Se ven 4 tarjetas de modelos por fila.
 500 px: Se ven 2 tarjetas de modelos por fila.
+
+Dificultades de diseño responsive:
+
+-El encabezado no se centraba correctamente en el tamaño para móvil; se
+solucionó con "margin-inline: auto", que corrige el margin para que la línea
+quede en la posición correcta.
+
+-Las casillas de las tablas tenían mucho más espacio que texto, lo cual en la
+versión movile limitaba la lectura, se corrigió reduciendo el margin original
+a 0.25 rem, y desde la media query de 768px vuelve a tomar el valor de
+var(--espacio-pequeno)
+
+-El footer no se alineaba correctamente en pantallas pequeñas, para
+solucionarlo se hizo uso de la declaración "justify-content: flex-start;"
+que permite que se alineen al principio todos los elementos
   
