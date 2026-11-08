@@ -12,8 +12,8 @@
     --fuente-texto: "Open Sans", Arial, sans-serif;
 
     --espacio-pequeno: 0.5rem;
-    --espacio-mediano: 1rem;
-    --espacio-grande: 2rem;
+    --espacio-mediano: clamp(0.75rem, 1.5vw, 1rem);
+    --espacio-grande: clamp(1.25rem, 3vw, 2rem);
 }
 
 /* Base y elementos generales */
@@ -23,13 +23,22 @@
 }
 
 body {
+    margin: 0;
     font-family: var(--fuente-texto);
+    line-height: 1.6;
     color: var(--color-azul-noche);
     background-color: var(--color-crema);
 }
 
 h1, h2, h3 {
     font-family: var(--fuente-titulos);
+    line-height: 1.2;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 a {
@@ -45,6 +54,9 @@ button {
 /* Navegación compartida, Encabezado y Footer*/
 
 header {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: var(--espacio-mediano) clamp(1rem, 4vw, 3rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +71,8 @@ header {
 
 #menu {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     list-style: none;
     gap: var(--espacio-pequeno);
     margin: 0;
@@ -66,8 +80,7 @@ header {
 }
 
 #menu a {
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     padding: var(--espacio-pequeno);
     color: var(--color-gris-asfalto);
     background-color: var(--color-crema);
@@ -98,10 +111,14 @@ header {
 }
 
 footer {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding: var(--espacio-mediano) clamp(1rem, 4vw, 3rem);
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: var(--espacio-mediano);
 }
 
 /* Componentes compartidos como CTA y WhatsApp */
@@ -131,6 +148,7 @@ a.boton-cta:focus-visible {
     position: fixed;
     bottom: var(--espacio-mediano);
     right: var(--espacio-mediano);
+    max-width: calc(100% - 2 * var(--espacio-mediano));
 }
 
 /* al tabular no está pasando por este botón */
@@ -139,9 +157,47 @@ a.boton-cta:focus-visible {
     outline-offset: 2px;
 }
 
-/* Página de inicio, tarjetas(flotas) y tarjetas(servicios) */
+main {
+    width: min(100%, 80rem);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+main > section {
+    padding-block: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* Página de inicio, tarjetas(flotas), tarjetas(rutas) y tarjetas(servicios) */
 #portada {
-    min-height: 80vh;
+    min-height: 70svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portada .contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: var(--espacio-grande);
+    justify-content: center;
+    align-items: center;
+}
+
+#portada .contenido #text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#portada .contenido #image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#portada #image img {
+    width: 100%;
+    max-width: 25rem;
 }
 
 .contenido {
@@ -151,11 +207,12 @@ a.boton-cta:focus-visible {
 
 .flota {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: var(--espacio-mediano);
 }
 
 .modelo-flota {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     border: 2px solid var(--color-naranja-pedal);
@@ -170,7 +227,7 @@ a.boton-cta:focus-visible {
     padding: var(--espacio-mediano);
     justify-content: space-between;
     gap: var(--espacio-pequeno);
-    height: 100%;
+    flex: 1;
 }
 
 .modelo-flota img {
@@ -190,24 +247,85 @@ a.boton-cta:focus-visible {
     transform: translateY(2px);
 }
 
+#contenedor-rutas {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 0;
+    gap: var(--espacio-grande);
+}
+
+#contenedor-rutas > li {
+    min-width: 0;
+}
+
+.ruta {
+    color: var(--color-blanco);
+    background-color: var(--color-gris-asfalto);
+    width: 100%;
+    max-width: none;
+    border: 2px solid var(--color-azul-noche);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+.ruta .contenido {
+    padding: var(--espacio-pequeno);
+}
+
+.img-ruta {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.ruta .dificultad {
+    background-color: black;
+    border-radius: 25px;
+    padding: var(--espacio-pequeno) var(--espacio-mediano);
+    width: fit-content;
+}
+
+.ruta #facil {
+    background-color: #4ab253;
+}
+
+.ruta #intermedio {
+    background-color: #c88952;
+}
+
+.ruta #dificil {
+    background-color: #c74e4e;
+}
+
 #contenedor-servicios {
     list-style: none;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     max-width: 60rem;
     margin: 0 auto;
+    padding: 0;
     gap: var(--espacio-grande);
+}
+
+#contenedor-servicios > li {
+    min-width: 0;
 }
 
 .servicio {
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
     width: 100%;
-    max-width: 30rem;
+    max-width: none;
     border: 2px solid var(--color-azul-noche);
     border-radius: 1rem;
     overflow: hidden;
     padding: 0;
-    position:relative;
+    position: relative;
 }
 
 .etiqueta-nuevo {
@@ -230,15 +348,27 @@ a.boton-cta:focus-visible {
 .img-servicio {
     width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 /* Página de tarifas */
 .tabla-tarifas {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
     border: 3px solid var(--color-azul-noche);
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
-    margin: 2rem 0;
+    margin: var(--espacio-grande) 0;
     padding: var(--espacio-pequeno);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.tabla-tarifas th,
+.tabla-tarifas td {
+    padding: var(--espacio-pequeno);
+    overflow-wrap: anywhere;
 }
 
 .tabla-tarifas caption {
@@ -249,8 +379,31 @@ a.boton-cta:focus-visible {
 }
 
 /* Página de reservas / Formulario */
+
+.contenido-reservas {
+    display: flex;
+    gap: var(--espacio-grande);
+}
+
+#informacion-de-contacto {
+    flex: 1;
+}
+
+#formulario {
+    flex: 2;
+}
+
 #formulario label {
     display: block;
+}
+
+#formulario form {
+    max-width: 48rem;
+}
+
+#formulario fieldset {
+    min-width: 0;
+    padding: var(--espacio-mediano);
 }
 
 #formulario input,
@@ -264,6 +417,11 @@ a.boton-cta:focus-visible {
     margin-bottom: var(--espacio-mediano);
 }
 
+#formulario textarea {
+    min-height: 8rem;
+    resize: vertical;
+}
+
 #formulario button[type="submit"] {
     padding: var(--espacio-mediano) var(--espacio-grande);
     margin: var(--espacio-pequeno);
@@ -272,6 +430,18 @@ a.boton-cta:focus-visible {
 #formulario input[type="checkbox"] {
     width: auto;
     margin-right: var(--espacio-pequeno);
+}
+
+.fila-tipos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+}
+
+.fila-documento-tel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
 }
 
 /* Foco visible de los controles del formulario */
