@@ -125,4 +125,37 @@ var(--espacio-pequeno)
 -El footer no se alineaba correctamente en pantallas pequeñas, para
 solucionarlo se hizo uso de la declaración "justify-content: flex-start;"
 que permite que se alineen al principio todos los elementos
+
+Día 2:
+
+Catálogo Bootstrap y comparación de distribución:
+
+- Tiempo invertido: Se dedicaron 20 minutos a escribir y ajustar
+  catalogo-bootstrap.html.
+- En la versión original del index, el CSS de distribución de la flota
+  ocupa 3 bloques .flota: uno en el archivo base y uno en cada media
+  query (768 px y 1280 px). En total son 11 líneas físicas de CSS y
+  5 declaraciones de distribución: display, grid-template-columns y gap
+  en la base, además de otra grid-template-columns en cada breakpoint.
+- Las clases usadas ahora en catalogo-bootstrap.html son container, row,
+  justify-content-center, align-items-center, col-12, col-sm-6, col-lg-4,
+  col-xl-3 y w-100. Las clases propias modelo-contenido,
+  nombre-modelo-flota, descripcion-modelo-flota, precio-modelo-flota y
+  enlace-modelo-flota se conservaron para el contenido de las tarjetas.
+- Bootstrap entrega sin escribir CSS personalizado:
+  - Un contenedor con ancho responsivo.
+  - Un sistema de filas y columnas de 12 partes.
+  - Distribución automática según los breakpoints: 1 columna en móvil,
+    2 desde sm, 3 desde lg y 4 desde xl.
+  - Utilidades para centrar elementos y hacer que las imágenes ocupen
+    el 100% del ancho.
+  - Reglas responsivas ya probadas y mantenidas por el framework.
+- Se perdió el control directo sobre los nombres y tamaños personalizados
+  de la cuadrícula: el ancho mínimo de 14 rem, el gap definido por
+  var(--espacio-mediano), los breakpoints exactos creados para el proyecto
+  y el comportamiento de cada media query. También se perdió el control
+  inmediato sobre el estilo completo de las tarjetas, su borde, fondo,
+  border-radius, proporción de imagen 16/9, object-fit y distribución
+  vertical interna, porque catalogo-bootstrap.html ya no usa las clases
+  .modelo-flota ni .modelo-flota img del CSS original.
   
