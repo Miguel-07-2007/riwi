@@ -168,51 +168,6 @@ main>section {
     padding-block: clamp(1rem, 3vw, 2.5rem);
 }
 
-/* Página de inicio, tarjetas(flotas), tarjetas(rutas) y tarjetas(servicios) */
-#portada {
-    min-height: 70svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#portada .contenido {
-    display: grid;
-    grid-template-columns: minmax(min(100%, 18rem), 1fr);
-    gap: var(--espacio-grande);
-    justify-content: center;
-    align-items: center;
-}
-
-#portada .contenido #text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#portada .contenido #image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#portada #image img {
-    width: 100%;
-    max-width: 25rem;
-}
-
-.contenido {
-    max-width: 60rem;
-    margin: 0 auto;
-}
-
-.flota {
-    display: grid;
-    grid-template-columns: minmax(min(100%, 14rem), 1fr);
-    gap: var(--espacio-mediano);
-}
-
 .modelo-flota {
     min-width: 0;
     display: flex;
@@ -248,7 +203,7 @@ main>section {
 
 .modelo-flota .precio-modelo-flota {
     margin-bottom: 0;
-    color: var(--color-naranja-pedal);
+    color: var(--color-blanco);
     font-weight: 700;
 }
 
@@ -269,31 +224,6 @@ main>section {
     color: var(--color-naranja-pedal);
 }
 
-.modelo-flota a {
-    display: inline-block;
-    padding: 6px;
-    text-decoration: none;
-    border-radius: var(--espacio-pequeno);
-}
-
-.modelo-flota a:hover {
-    transform: translateY(2px);
-}
-
-#contenedor-rutas {
-    list-style: none;
-    display: grid;
-    grid-template-columns: minmax(min(100%, 16rem), 1fr);
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: 0;
-    gap: var(--espacio-grande);
-}
-
-#contenedor-rutas>li {
-    min-width: 0;
-}
-
 .ruta {
     color: var(--color-blanco);
     background-color: var(--color-gris-asfalto);
@@ -304,10 +234,6 @@ main>section {
     overflow: hidden;
     padding: 0;
     position: relative;
-}
-
-.ruta .contenido {
-    padding: var(--espacio-pequeno);
 }
 
 .img-ruta {
@@ -335,20 +261,6 @@ main>section {
     background-color: #c74e4e;
 }
 
-#contenedor-servicios {
-    list-style: none;
-    display: grid;
-    grid-template-columns: minmax(min(100%, 18rem), 1fr);
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: 0;
-    gap: var(--espacio-grande);
-}
-
-#contenedor-servicios>li {
-    min-width: 0;
-}
-
 .servicio {
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
@@ -372,10 +284,6 @@ main>section {
     border-radius: 999px;
     font-weight: 600;
     z-index: 1;
-}
-
-.servicio .contenido {
-    padding: var(--espacio-pequeno);
 }
 
 .img-servicio {
@@ -484,6 +392,7 @@ button:focus-visible {
     background-color: var(--color-verde-ruta);
 }
 
+/* Tarifas y reservas conservan sus distribuciones responsivas. */
 @media (min-width: 768px) {
 
     header {
@@ -493,22 +402,6 @@ button:focus-visible {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-    }
-
-    #portada .contenido {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-    }
-
-    #contenedor-rutas {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-    }
-
-    .flota {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-    }
-
-    #contenedor-servicios {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     }
 
     .contenido-reservas {
@@ -536,23 +429,8 @@ button:focus-visible {
     }
 }
 
+/* Reservas mantiene el cambio a columnas anchas en xl. */
 @media (min-width: 1280px) {
-    #portada .contenido {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-    }
-
-    #contenedor-rutas {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-    }
-
-    .flota {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
-    }
-
-    #contenedor-servicios {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
-    }
-
     .contenido-reservas {
         display: flex;
     }

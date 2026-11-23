@@ -159,7 +159,7 @@ Catálogo Bootstrap y comparación de distribución:
   vertical interna, porque catalogo-bootstrap.html ya no usa las clases
   .modelo-flota ni .modelo-flota img del CSS original.
 
-Día 3: Franja de cierre responsive con utilidades Bootstrap 5.3
+Franja de cierre responsive con utilidades Bootstrap 5.3
 
 - Se agregó una franja final con texto y enlace de reserva; usa flex en columna
   en móvil y cambia a fila desde md. La grilla container/row/col-12 mantiene
@@ -179,4 +179,35 @@ Día 3: Franja de cierre responsive con utilidades Bootstrap 5.3
   - https://getbootstrap.com/docs/5.3/helpers/color-background/
   - https://getbootstrap.com/docs/5.3/utilities/spacing/
   - https://getbootstrap.com/docs/5.3/layout/grid/
+
+Integración de Bootstrap en la página de inicio
+
+- Se cargó Bootstrap 5.3.9 antes de css/styles.css y su bundle al final del
+  body. La hoja del sitio conserva la última palabra para los estilos de marca.
+- Portada, rutas, flota, beneficios y servicios ahora usan container, row,
+  columnas responsivas y utilidades. Se retiraron de styles.css las reglas
+  propias de grilla que estas secciones ya no necesitan.
+- DevTools: se revisaron las reglas coincidentes en Styles y los estilos
+  calculados.
+  1. Ancho y espaciado: la regla general main de styles.css definía ancho y
+     padding; .container de Bootstrap limita el ancho y aplica gutters. Se
+     asignó .container a main para usar deliberadamente la grilla de Bootstrap.
+  2. Márgenes: Bootstrap Reboot asigna margin-bottom: 1rem a los párrafos; la
+     regla .nombre-del-negocio establece margin: 21.44px 0 y prevalece por su
+     especificidad. Se mantuvo ese margen intencional para el encabezado.
+  3. Enlaces y CTA: el color predeterminado de los enlaces de Bootstrap queda
+     sustituido por Verde Ruta en la regla a de styles.css, que se carga después.
+     También se retiró la antigua regla .modelo-flota a, que tenía más
+     especificidad que .btn y podía alterar su padding.      Los enlaces sencillos conservan el color de marca, los botones de reserva
+     usan .btn de Bootstrap y el CTA general conserva .boton-cta.
+- Revisión tipográfica en Styles: Open Sans se conserva en body y Montserrat en
+  los títulos. .fs-1 fija el tamaño fluido del h1 en 27.4 px, 33.52 px y
+  40 px según el ancho. No se añadieron declaraciones !important propias.
+- Pruebas de viewport con ancho 360, 768 y 1280 px:
+  - 360 px: portada, rutas, flota, beneficios y servicios en una columna; sin
+    desbordamiento horizontal.
+  - 768 px: portada en dos columnas; rutas, flota, beneficios y servicios en
+    dos columnas; sin desbordamiento horizontal.
+  - 1280 px: portada en dos columnas; rutas en tres, flota y beneficios en
+    cuatro, servicios en tres; sin desbordamiento horizontal.
   
