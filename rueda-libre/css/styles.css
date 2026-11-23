@@ -222,6 +222,13 @@ main>section {
     color: var(--color-blanco);
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 0.35rem 0.9rem rgb(20 33 61 / 14%);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modelo-flota:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.65rem 1.25rem rgb(20 33 61 / 22%);
 }
 
 .modelo-contenido {
@@ -237,6 +244,29 @@ main>section {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+}
+
+.modelo-flota .precio-modelo-flota {
+    margin-bottom: 0;
+    color: var(--color-naranja-pedal);
+    font-weight: 700;
+}
+
+#beneficios .beneficio {
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+    border: 2px solid var(--color-naranja-pedal);
+    border-radius: 1rem;
+}
+
+#beneficios .beneficio .card-title {
+    color: var(--color-blanco);
+    font-size: 1.2rem;
+}
+
+#beneficios .beneficio-dato {
+    margin-top: auto;
+    color: var(--color-naranja-pedal);
 }
 
 .modelo-flota a {
@@ -540,5 +570,15 @@ button:focus-visible {
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modelo-flota {
+        transition: none;
+    }
+
+    .modelo-flota:hover {
+        transform: none;
     }
 }

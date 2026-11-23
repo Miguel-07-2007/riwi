@@ -158,4 +158,25 @@ Catálogo Bootstrap y comparación de distribución:
   border-radius, proporción de imagen 16/9, object-fit y distribución
   vertical interna, porque catalogo-bootstrap.html ya no usa las clases
   .modelo-flota ni .modelo-flota img del CSS original.
+
+Día 3: Franja de cierre responsive con utilidades Bootstrap 5.3
+
+- Se agregó una franja final con texto y enlace de reserva; usa flex en columna
+  en móvil y cambia a fila desde md. La grilla container/row/col-12 mantiene
+  el contenido alineado.
+- La imagen decorativa de la bicicleta se oculta en móvil y aparece desde md.
+- El enlace se destaca con utilidades de color y espaciado, sin usar el
+  componente botón ni CSS propio.
+- Cinco clases consultadas en la documentación oficial:
+  - flex-column: organiza los elementos en columna.
+  - flex-md-row: cambia la dirección a fila desde md.
+  - d-none: oculta inicialmente la imagen.
+  - d-md-block: muestra la imagen desde md.
+  - text-bg-warning: combina fondo de advertencia con texto contrastante.
+- Documentación oficial consultada:
+  - https://getbootstrap.com/docs/5.3/utilities/flex/
+  - https://getbootstrap.com/docs/5.3/utilities/display/
+  - https://getbootstrap.com/docs/5.3/helpers/color-background/
+  - https://getbootstrap.com/docs/5.3/utilities/spacing/
+  - https://getbootstrap.com/docs/5.3/layout/grid/
   
