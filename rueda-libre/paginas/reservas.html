@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas-Rueda-Libre</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,69 +15,68 @@
 </head>
 
 <body>
-    <header>
-        <h1>Reserva tu bicicleta</h1>
+    <header class="container d-flex flex-column flex-md-row justify-content-md-between align-items-center flex-wrap gap-2 py-3">
+        <h1 class="my-3">Reserva tu bicicleta</h1>
         <nav>
-            <ul id="menu">
+            <ul id="menu" class="d-flex flex-wrap justify-content-center justify-content-md-end gap-2 list-unstyled m-0 p-0">
                 <li>
-                    <a href="../index.html">Inicio</a>
+                    <a href="../index.html" class="d-block p-2">Inicio</a>
                 </li>
                 <li>
-                    <a href="reservas.html" class="activo">Reservas</a>
+                    <a href="reservas.html" class="activo d-block p-2">Reservas</a>
                 </li>
                 <li>
-                    <a href="tarifas.html">Tarifas y Rutas</a>
+                    <a href="tarifas.html" class="d-block p-2">Tarifas y Rutas</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="contenido-reservas">
-
-            <section id="formulario">
+    <main class="container py-4">
+        <div class="row g-4 align-items-start">
+            <section id="formulario" class="col-12 col-md-8">
                 <h2>Formulario de Reserva</h2>
                 <form action="#" method="post">
-                    <fieldset>
+                    <fieldset class="mb-4 p-3">
                         <legend>Tus Datos</legend>
-                        <div class="campo">
-                            <label for="nombre">Nombre Completo</label>
-                            <input type="text" name="nombre" id="nombre" required minlength="3"
+                        <div class="mb-3">
+                            <label class="form-label" for="nombre">Nombre Completo</label>
+                            <input class="form-control" type="text" name="nombre" id="nombre" required minlength="3"
                                 title="Ingresa tu nombre completo (mínimo 3 caracteres).">
                         </div>
 
-                        <div class="fila-documento-tel">
-                            <div class="campo">
-                                <label for="documento">Numero de Documento</label>
-                                <input type="number" name="documento" id="documento" required minlength="6"
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <label class="form-label" for="documento">Numero de Documento</label>
+                                <input class="form-control" type="number" name="documento" id="documento" required minlength="6"
                                     maxlength="10" title="Ingresa tu número de documento.">
                             </div>
-                            <div class="campo">
-                                <label for="celular">Celular</label>
-                                <input type="tel" name="celular" id="celular" required pattern="3[0-9]"
+                            <div class="col-12 col-sm-6">
+                                <label class="form-label" for="celular">Celular</label>
+                                <input class="form-control" type="tel" name="celular" id="celular" required pattern="3[0-9]"
                                     title="Ingresa tu número de celular.">
                             </div>
                         </div>
 
-                        <div class="campo">
-                            <label for="correo">Correo Electrónico</label>
-                            <input type="email" name="correo" id="correo" required
+                        <div class="mt-3">
+                            <label class="form-label" for="correo">Correo Electrónico</label>
+                            <input class="form-control" type="email" name="correo" id="correo" required
                                 title="Ingresa una dirección de correo electrónico válida.">
                         </div>
                     </fieldset>
 
-                    <fieldset>
+                    <fieldset class="mb-4 p-3">
                         <legend>Tu Alquiler</legend>
 
-                        <div class="campo">
-                            <label for="fecha">Fecha de alquiler</label>
-                            <input type="date" name="fecha" id="fecha" required min="2026-11-01" max="2026-12-31"
+                        <div class="mb-3">
+                            <label class="form-label" for="fecha">Fecha de alquiler</label>
+                            <input class="form-control" type="date" name="fecha" id="fecha" required min="2026-11-01" max="2026-12-31"
                                 title="Selecciona la fecha de alquiler, entre el 1 de noviembre y el 31 de diciembre de 2026.">
                         </div>
 
-                        <div class="fila-tipos">
-                            <div class="campo">
-                                <label for="tipo_bicicleta">Tipo de bicicleta</label>
-                                <select name="tipo_bicicleta" id="tipo_bicicleta" required
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-sm-6">
+                                <label class="form-label" for="tipo_bicicleta">Tipo de bicicleta</label>
+                                <select class="form-select" name="tipo_bicicleta" id="tipo_bicicleta" required
                                     title="Selecciona el tipo de bicicleta que deseas alquilar.">
                                     <option value="urbana">Urbana</option>
                                     <option value="montaña">Montaña</option>
@@ -84,9 +84,9 @@
                                 </select>
                             </div>
 
-                            <div class="campo">
-                                <label for="tipo_plan">Tipo de plan</label>
-                                <select name="tipo_plan" id="tipo_plan" required>
+                            <div class="col-12 col-sm-6">
+                                <label class="form-label" for="tipo_plan">Tipo de plan</label>
+                                <select class="form-select" name="tipo_plan" id="tipo_plan" required>
                                     <option value="una_hora">Una hora</option>
                                     <option value="medio_dia">Medio día</option>
                                     <option value="dia_completo">Día completo</option>
@@ -94,15 +94,15 @@
                             </div>
                         </div>
 
-                        <div class="campo">
-                            <label for="cantidad_bicicletas">Cantidad de bicicletas</label>
-                            <input type="number" name="cantidad_bicicletas" id="cantidad_bicicletas" min="1" max="6"
+                        <div class="mb-3">
+                            <label class="form-label" for="cantidad_bicicletas">Cantidad de bicicletas</label>
+                            <input class="form-control" type="number" name="cantidad_bicicletas" id="cantidad_bicicletas" min="1" max="6"
                                 step="1" value="1" title="Indica cuántas bicicletas necesitas (de 1 a 6).">
                         </div>
 
-                        <div class="campo">
-                            <label for="recorrido_guiado">Recorrido guiado</label>
-                            <select name="recorrido_guiado" id="recorrido_guiado"
+                        <div class="mb-3">
+                            <label class="form-label" for="recorrido_guiado">Recorrido guiado</label>
+                            <select class="form-select" name="recorrido_guiado" id="recorrido_guiado"
                                 title="Selecciona un recorrido guiado si deseas participar en uno.">
                                 <option value="rio_parques">Río y Parques</option>
                                 <option value="sabores_barrio">Sabores de Barrio</option>
@@ -111,55 +111,61 @@
                             </select>
                         </div>
 
-                        <div class="campo">
-                            <label for="comentarios">Comentarios</label>
-                            <textarea name="comentarios" id="comentarios" maxlength="300">
+                        <div class="mb-3">
+                            <label class="form-label" for="comentarios">Comentarios</label>
+                            <textarea class="form-control" name="comentarios" id="comentarios" maxlength="300">
                             Escribe cualquier comentario adicional (máximo 300 caracteres).
                             </textarea>
                         </div>
                     </fieldset>
 
-                    <fieldset>
+                    <fieldset class="mb-4 p-3">
                         <legend>Confirmación</legend>
 
-                        <label for="confirmacion">
-                            Confirmación de las políticas de alquiler
-                            <input type="checkbox" name="confirmacion" id="confirmacion" required>
-                        </label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="confirmacion" id="confirmacion" required>
+                            <label class="form-check-label" for="confirmacion">
+                                Confirmación de las políticas de alquiler
+                            </label>
+                        </div>
                     </fieldset>
 
-                    <button type="submit">Enviar formulario</button>
+                    <button class="btn" type="submit">Enviar formulario</button>
 
                 </form>
             </section>
-            <section id="información-de-contacto">
-                <article>
-                    <header>
-                        <h2>Información de contacto</h2>
-                    </header>
-                    <a href="mailto:hola@ruedalibre.example">Enviar correo a Rueda Libre</a>
-                    <a href="https://wa.me/573000000000" target="_blank" class="enlace-whatsapp">Escríbenos por
-                        WhatsApp</a>
-                </article>
-                <article>
-                    <header>
-                        <h3>Horario de Atención:</h3>
-                    </header>
-                    <dl>
-                        <dt>Lunes a viernes</dt>
-                        <dd>7:00 a.m. - 7:00 p.m.</dd>
-                        <dt>Sábados, domingos y festivos</dt>
-                        <dd>6:00 a.m. - 2:00 p.m.</dd>
-                    </dl>
-                </article>
+            <section id="informacion-de-contacto" class="col-12 col-md-4">
+                <div class="d-flex flex-column gap-3">
+                    <article class="card">
+                        <div class="card-body d-flex flex-column gap-2">
+                            <h2 class="h4">Información de contacto</h2>
+                            <a href="mailto:hola@ruedalibre.example">Enviar correo a Rueda Libre</a>
+                            <a href="https://wa.me/573000000000" target="_blank">Escríbenos por WhatsApp</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <h3 class="h5">Horario de Atención:</h3>
+                            <dl>
+                                <dt>Lunes a viernes</dt>
+                                <dd>7:00 a.m. - 7:00 p.m.</dd>
+                                <dt>Sábados, domingos y festivos</dt>
+                                <dd>6:00 a.m. - 2:00 p.m.</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </div>
             </section>
         </div>
+        <a href="https://wa.me/573000000000" target="_blank"
+            class="enlace-whatsapp position-fixed bottom-0 end-0 m-3 mw-100">Escríbenos por WhatsApp</a>
     </main>
-    <footer>
-        <p>Rueda Libre</p>
-        <p>2026</p>
-        <p>hola@ruedalibre.example</p>
+    <footer class="container d-flex flex-column flex-md-row justify-content-md-between align-items-md-center gap-3 py-3">
+        <p class="mb-0">Rueda Libre</p>
+        <p class="mb-0">2026</p>
+        <p class="mb-0">hola@ruedalibre.example</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

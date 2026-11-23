@@ -18,12 +18,7 @@
 
 /* Base y elementos generales */
 
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
     font-family: var(--fuente-texto);
     line-height: 1.6;
     color: var(--color-azul-noche);
@@ -37,12 +32,6 @@ h3 {
     line-height: 1.2;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
 a {
     color: var(--color-verde-ruta);
     background-color: var(--color-crema);
@@ -53,35 +42,14 @@ button {
     background-color: var(--color-naranja-pedal);
 }
 
-/* Navegación compartida, Encabezado y Footer*/
-
-header {
-    width: min(100%, 80rem);
-    margin-inline: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* Navegación compartida */
 
 .nombre-del-negocio {
-    margin: 21.44px 0px;
     font-size: 2em;
     font-weight: bold;
 }
 
-#menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    list-style: none;
-    gap: var(--espacio-pequeno);
-    margin: 0;
-    padding: 0;
-}
-
 #menu a {
-    display: block;
-    padding: var(--espacio-pequeno);
     color: var(--color-gris-asfalto);
     background-color: var(--color-crema);
     border-radius: 0.25rem;
@@ -110,18 +78,6 @@ header {
     outline-offset: 3px;
 }
 
-footer {
-    width: min(100%, 80rem);
-    margin-inline: auto;
-    padding: var(--espacio-mediano) clamp(1rem, 4vw, 3rem);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    gap: var(--espacio-mediano);
-}
-
 /* Componentes compartidos como CTA y WhatsApp */
 a.boton-cta {
     display: inline-block;
@@ -145,33 +101,13 @@ a.boton-cta:focus-visible {
     outline-offset: 3px;
 }
 
-.enlace-whatsapp {
-    position: fixed;
-    bottom: var(--espacio-mediano);
-    right: var(--espacio-mediano);
-    max-width: calc(100% - 2 * var(--espacio-mediano));
-}
-
-/* al tabular no está pasando por este botón */
+/* Mantiene el foco visible en el enlace flotante */
 .enlace-whatsapp:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 2px;
 }
 
-main {
-    width: min(100%, 80rem);
-    margin-inline: auto;
-    padding-inline: clamp(1rem, 4vw, 3rem);
-}
-
-main>section {
-    padding-block: clamp(1rem, 3vw, 2.5rem);
-}
-
 .modelo-flota {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
     border: 2px solid var(--color-naranja-pedal);
     background-color: var(--color-verde-ruta);
     color: var(--color-blanco);
@@ -186,23 +122,7 @@ main>section {
     box-shadow: 0 0.65rem 1.25rem rgb(20 33 61 / 22%);
 }
 
-.modelo-contenido {
-    display: flex;
-    flex-direction: column;
-    padding: var(--espacio-mediano);
-    justify-content: space-between;
-    gap: var(--espacio-pequeno);
-    flex: 1;
-}
-
-.modelo-flota img {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
 .modelo-flota .precio-modelo-flota {
-    margin-bottom: 0;
     color: var(--color-blanco);
     font-weight: 700;
 }
@@ -220,20 +140,15 @@ main>section {
 }
 
 #beneficios .beneficio-dato {
-    margin-top: auto;
     color: var(--color-naranja-pedal);
 }
 
 .ruta {
     color: var(--color-blanco);
     background-color: var(--color-gris-asfalto);
-    width: 100%;
-    max-width: none;
     border: 2px solid var(--color-azul-noche);
     border-radius: 1rem;
     overflow: hidden;
-    padding: 0;
-    position: relative;
 }
 
 .img-ruta {
@@ -246,7 +161,6 @@ main>section {
     background-color: black;
     border-radius: 25px;
     padding: var(--espacio-pequeno) var(--espacio-mediano);
-    width: fit-content;
 }
 
 .ruta #facil {
@@ -264,26 +178,17 @@ main>section {
 .servicio {
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
-    width: 100%;
-    max-width: none;
     border: 2px solid var(--color-azul-noche);
     border-radius: 1rem;
     overflow: hidden;
-    padding: 0;
-    position: relative;
 }
 
 .etiqueta-nuevo {
-    position: absolute;
-    top: var(--espacio-pequeno);
-    right: var(--espacio-pequeno);
-    margin: var(--espacio-pequeno);
     padding: 0.25rem 0.75rem;
     color: var(--color-azul-noche);
     background-color: var(--color-naranja-pedal);
     border-radius: 999px;
     font-weight: 600;
-    z-index: 1;
 }
 
 .img-servicio {
@@ -295,20 +200,26 @@ main>section {
 /* Página de tarifas */
 .tabla-tarifas {
     width: 100%;
-    max-width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
     border: 3px solid var(--color-azul-noche);
     color: var(--color-blanco);
     background-color: var(--color-azul-noche);
     margin: var(--espacio-grande) 0;
-    padding: var(--espacio-pequeno);
     font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.tabla-alquiler {
+    min-width: 32rem;
+}
+
+.tabla-rutas {
+    min-width: 40rem;
 }
 
 .tabla-tarifas th,
 .tabla-tarifas td {
-    padding: var(0.25rem);
+    padding: var(--espacio-pequeno);
     overflow-wrap: anywhere;
 }
 
@@ -321,36 +232,6 @@ main>section {
 
 /* Página de reservas / Formulario */
 
-.contenido-reservas {
-    display: grid;
-    grid-template-columns: minmax(min(100%, 18rem), 1fr);
-    gap: var(--espacio-grande);
-}
-
-#formulario label {
-    display: block;
-}
-
-#formulario form {
-    max-width: 48rem;
-}
-
-#formulario fieldset {
-    min-width: 0;
-    padding: var(--espacio-mediano);
-}
-
-#formulario input,
-#formulario textarea,
-#formulario select {
-    width: 100%;
-    margin-bottom: var(--espacio-pequeno);
-}
-
-#formulario fieldset {
-    margin-bottom: var(--espacio-mediano);
-}
-
 #formulario textarea {
     min-height: 8rem;
     resize: vertical;
@@ -359,23 +240,9 @@ main>section {
 #formulario button[type="submit"] {
     padding: var(--espacio-mediano) var(--espacio-grande);
     margin: var(--espacio-pequeno);
-}
-
-#formulario input[type="checkbox"] {
-    width: auto;
-    margin-right: var(--espacio-pequeno);
-}
-
-.fila-tipos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
-}
-
-.fila-documento-tel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
+    color: var(--color-azul-noche);
+    background-color: var(--color-naranja-pedal);
+    border-color: var(--color-azul-noche);
 }
 
 /* Foco visible de los controles del formulario */
@@ -390,65 +257,6 @@ button:focus-visible {
 #formulario button:hover {
     color: var(--color-blanco);
     background-color: var(--color-verde-ruta);
-}
-
-/* Tarifas y reservas conservan sus distribuciones responsivas. */
-@media (min-width: 768px) {
-
-    header {
-        width: min(100%, 80rem);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .contenido-reservas {
-        display: flex;
-    }
-
-    #informacion-de-contacto {
-        flex: 1;
-    }
-
-    #formulario {
-        flex: 2;
-    }
-
-        .tabla-tarifas th,
-    .tabla-tarifas td {
-        padding: var(--espacio-pequeno);
-    }
-
-    footer {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-}
-
-/* Reservas mantiene el cambio a columnas anchas en xl. */
-@media (min-width: 1280px) {
-    .contenido-reservas {
-        display: flex;
-    }
-
-    #informacion-de-contacto {
-        flex: 1;
-    }
-
-    #formulario {
-        flex: 2;
-    }
-
-    footer {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {

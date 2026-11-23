@@ -210,4 +210,36 @@ Integración de Bootstrap en la página de inicio
     dos columnas; sin desbordamiento horizontal.
   - 1280 px: portada en dos columnas; rutas en tres, flota y beneficios en
     cuatro, servicios en tres; sin desbordamiento horizontal.
+
+  Migración de Tarifas y Reservas a Bootstrap
+
+  - Bootstrap 5.3.9 se carga en las tres páginas antes de css/styles.css; el
+    bundle queda al final del body.
+  - Tarifas usa la grilla para organizar tablas e información adicional en dos
+    columnas desde lg. Las tablas mantienen sus estilos de marca y usan
+    table-responsive para poder desplazarse horizontalmente en pantallas pequeñas.
+  - Reservas usa columnas 8/4 desde md; los campos cortos se organizan con filas
+    y columnas de Bootstrap. Se conservaron los atributos nativos de validación.
+  - Encabezados, pies, navegación, franja de WhatsApp, insignia y espacios
+    internos de tarjetas usan utilidades Bootstrap. Se retiraron reglas propias
+    de distribución y se conservaron colores, tipografía, tarjetas, tablas y foco.
+  - Comparativa de styles.css:
+    - v1.5: 544 líneas en el commit
+      f51b3f64ac8c0746bc972a2b2068c063b01b5e25 (8 de noviembre de 2026).
+    - Versión actual: 270 líneas.
+    - Reducción: 274 líneas (50,4 %).
+  - Tiempo real invertido: no está registrado para v1.5 ni para la migración
+    completa a Bootstrap. La bitácora sí registra 20 minutos para una tarea
+    anterior de catálogo; no se atribuyen a ninguna de estas dos versiones.
+  - Ventajas observadas: distribución responsive con la grilla estándar,
+    menos CSS propio de layout, y estructura de formulario más clara.
+  - Desventajas observadas: se depende de Bootstrap por CDN; las tablas anchas
+    requieren desplazamiento horizontal en móvil y el marcado incluye más clases.
+  - Pruebas a 360, 768 y 1280 px: las tres páginas cargan Bootstrap antes de
+    styles.css, no presentan desbordamiento horizontal y conservan sus imágenes.
+    Tarifas pasa a dos columnas desde lg; Reservas pasa a 8/4 desde md.
+  - Conclusión: la migración redujo styles.css a casi la mitad sin perder la
+    identidad visual ni las validaciones nativas. La grilla y las utilidades
+    reemplazan la distribución específica de las páginas; el desplazamiento
+    horizontal queda limitado a los contenedores de tablas en pantallas pequeñas.
   
